@@ -1,7 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // Embedded Postgres used only for local testing (LOCAL_DB_DIR); never bundled.
+  serverExternalPackages: ["@electric-sql/pglite"],
 };
 
 export default nextConfig;
