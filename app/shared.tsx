@@ -3,6 +3,7 @@
 import {createContext} from 'react';
 import {ArrowUpRight} from 'lucide-react';
 import type {Product,Settings,User} from './catalog-data';
+import {dict} from './i18n';
 
 export type Shop={
  t:(s:string)=>string,products:Product[],settings:Settings,
@@ -15,6 +16,8 @@ export type Shop={
 };
 export const Ctx=createContext<Shop>(null as unknown as Shop);
 
+const hindiLabels=new Map(Object.entries(dict).map(([key,value])=>[key.toLowerCase(),value[0]]));
+export const hindiLabel=(value:string)=>hindiLabels.get(value.toLowerCase())??value;
 export const phone='919872850453';
 export const waText=(text:string)=>'https://wa.me/'+phone+'?text='+encodeURIComponent(text);
 export const rupees=(n:number)=>'₹'+Math.round(n).toLocaleString('en-IN');

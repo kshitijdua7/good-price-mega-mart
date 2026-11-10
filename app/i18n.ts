@@ -1,6 +1,9 @@
 // Translations: English text -> [Hindi, Punjabi]. Any string missing here falls back to English.
 // Store name, address and phone number are intentionally left untranslated.
 export const dict: Record<string, [string, string]> = {
+  'Price: Low to High': ['कीमत: कम से ज़्यादा', 'ਕੀਮਤ: ਘੱਟ ਤੋਂ ਵੱਧ'],
+  'Price: High to Low': ['कीमत: ज़्यादा से कम', 'ਕੀਮਤ: ਵੱਧ ਤੋਂ ਘੱਟ'],
+  'Name: Z–A': ['नाम: Z–A', 'ਨਾਮ: Z–A'],
   // Navigation and common actions
   'Home': ['होम', 'ਹੋਮ'],
   'Explore products': ['प्रोडक्ट देखें', 'ਪ੍ਰੋਡਕਟ ਵੇਖੋ'],
