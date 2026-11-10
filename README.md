@@ -24,8 +24,13 @@ Our website introduces the store and makes it easy to plan your next home upgrad
 - Browse product categories and search the catalogue.
 - Explore a room-by-room home experience.
 - Open product pages and enquire directly through WhatsApp.
+- Save products to a shortlist and send the whole list to the showroom in one WhatsApp message.
+- Compare up to three product types side by side.
+- Answer three quick questions in the “Find my fit” guide to get a starting point for your visit.
+- Estimate a monthly instalment with the EMI calculator.
 - Ask about current offers before visiting.
-- Find our address, contact details and directions.
+- Find our address, contact details and directions, or ask for a call back.
+- Read the site in English, Hindi or Punjabi.
 - Browse on mobile or desktop, with day and night display modes.
 
 The online catalogue currently uses illustrative product artwork and product types. It is a starting point for enquiries; the showroom confirms the exact products available for purchase. Ask us about delivery, installation and warranty terms for your chosen model.
