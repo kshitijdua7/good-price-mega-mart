@@ -386,3 +386,22 @@ main{animation:pageIn .55s cubic-bezier(.2,.7,.2,1) backwards}
 .marquee{overflow-x:auto}
 .toast{transition:none}
 }
+
+/* First-visit language picker */
+.lang-gate{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:24px 16px;background:var(--bg);overflow-y:auto;animation:fadeIn .35s both}
+.lang-gate-glow{position:absolute;width:900px;height:700px;max-width:160vw;top:50%;left:50%;transform:translate(-50%,-55%);background:radial-gradient(ellipse,color-mix(in srgb,var(--accent) 30%,transparent),transparent 65%);pointer-events:none}
+.lang-gate-card{position:relative;width:min(460px,100%);text-align:center;animation:modalIn .55s .1s cubic-bezier(.2,.8,.2,1) both}
+.lang-gate .logo-mark{margin:0 auto;width:54px;height:54px;font-size:38px;border-radius:16px}
+.lang-gate-brand{font-size:22px;font-weight:650;letter-spacing:-.8px;margin-top:14px;line-height:1.05}
+.lang-gate-brand small{display:block;font-size:8px;letter-spacing:3.8px;margin-top:6px;font-weight:500;color:var(--muted)}
+.lang-gate h1{font-family:Manrope,sans-serif;font-size:30px;font-weight:500;letter-spacing:-1.2px;margin:38px 0 26px;line-height:1.2}
+.lang-gate h1 span{display:block;font-size:17px;letter-spacing:0;color:var(--muted);margin-top:8px;line-height:1.4}
+.lang-gate-options{display:grid;gap:12px}
+.lang-gate-options button{display:flex;align-items:center;gap:14px;min-height:72px;padding:0 24px;border-radius:18px;background:var(--surface);border:1px solid var(--line);text-align:left;transition:border-color .2s,transform .2s,background .2s}
+.lang-gate-options button:hover,.lang-gate-options button:focus-visible{border-color:var(--accent);background:var(--surface2);transform:translateY(-2px)}
+.lang-gate-native{font-size:22px;font-weight:600;letter-spacing:0}
+.lang-gate-hello{font-size:13px;color:var(--muted);margin-left:auto}
+.lang-gate-options svg{color:var(--accent);flex-shrink:0;transition:transform .2s}
+.lang-gate-options button:hover svg{transform:translateX(4px)}
+.lang-gate p{font-size:12px;color:var(--muted);margin-top:24px}
+@media(max-width:760px){.lang-gate h1{font-size:25px;margin:30px 0 22px}.lang-gate h1 span{font-size:15px}.lang-gate-options button{min-height:66px;padding:0 20px}.lang-gate-native{font-size:20px}}
