@@ -42,32 +42,3 @@ The online catalogue currently uses illustrative product artwork and product typ
 
 Please call ahead to confirm opening hours and the availability of any specific product you would like to see.
 
-## About this repository
-
-This repository contains the source code for the Good Price Mega Mart website, built with Next.js, React and Tailwind CSS and deployed on Vercel. Changes pushed to `main` are automatically deployed through the connected Vercel project.
-
-### Run locally
-
-Use Node.js 22.13 or newer:
-
-```bash
-npm ci
-npm run dev
-```
-
-Open [localhost:3000](http://localhost:3000).
-
-To create and run a production build:
-
-```bash
-npm run build
-npm start
-```
-
-### Update website content
-
-- Edit categories, product entries and contact information in `app/store.tsx`.
-- Edit visual styling in `app/globals.css`.
-- Edit the website title and description in `app/layout.tsx`.
-
-No environment variables are required for the current website. Enquiry links open a WhatsApp draft for the visitor to review and send; the website does not store form submissions.
