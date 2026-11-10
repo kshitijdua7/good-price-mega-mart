@@ -1,6 +1,6 @@
 'use client';
 // Pieces shared by the storefront, the cart/checkout/account pages and the owner dashboard.
-import {createContext} from 'react';
+import {createContext,useContext} from 'react';
 import {ArrowUpRight} from 'lucide-react';
 import type {Product,Settings,User} from './catalog-data';
 import {dict} from './i18n';
@@ -31,6 +31,6 @@ export async function api<T=Record<string,unknown>>(path:string,method='GET',bod
  return data as T;
 }
 
-export function Appliance({type='washer',className=''}:{type?:string,className?:string}) {return <div className={'appliance '+type+' '+className} aria-label={'Illustration of '+type} role="img"><div className="appliance-top"><span>GOOD LIVING</span><i/><b>◦ ◦ ◦</b></div><div className="appliance-body"><div className="appliance-door"><div className="drum"/></div><div className="handle"/><div className="seam"/><div className="vents"/><div className="plate p1"/><div className="plate p2"/><div className="plate p3"/></div><div className="feet"/></div>}
+export function Appliance({type='washer',className=''}:{type?:string,className?:string}) {const t=useContext(Ctx)?.t??((x:string)=>x);return <div className={'appliance '+type+' '+className} aria-label={'Illustration of '+type} role="img"><div className="appliance-top"><span>{t('GOOD LIVING')}</span><i/><b>◦ ◦ ◦</b></div><div className="appliance-body"><div className="appliance-door"><div className="drum"/></div><div className="handle"/><div className="seam"/><div className="vents"/><div className="plate p1"/><div className="plate p2"/><div className="plate p3"/></div><div className="feet"/></div>}
 export function Art({p}:{p:{image?:string,name:string,type:string}}){return p.image?<img className="product-photo" src={p.image} alt={p.name} loading="lazy"/>:<Appliance type={p.type}/>}
 export function Btn({children,href,secondary=false}:{children:React.ReactNode,href:string,secondary?:boolean}) {return <a className={'btn '+(secondary?'secondary':'')} href={href}>{children}<ArrowUpRight size={17}/></a>}

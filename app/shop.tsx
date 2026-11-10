@@ -55,7 +55,7 @@ export function CheckoutPage(){
    <label>{t('Phone number')}<input required type="tel" inputMode="tel" autoComplete="tel" pattern="\+?[0-9 -]{10,17}" value={form.phone} onChange={set('phone')}/></label>
    <label className="wide">{t('Address')}<textarea required maxLength={300} rows={3} autoComplete="street-address" value={form.address} onChange={set('address')}/></label>
    <label>{t('City')}<input required maxLength={60} autoComplete="address-level2" value={form.city} onChange={set('city')}/></label>
-   <label>{t('State')}<select value={form.state} onChange={set('state')}>{states.map(s=><option key={s}>{s}</option>)}</select></label>
+   <label>{t('State')}<select value={form.state} onChange={set('state')}>{states.map(s=><option key={s} value={s}>{t(s)}</option>)}</select></label>
    <label>{t('PIN code')}<input required inputMode="numeric" pattern="[0-9]{6}" maxLength={6} autoComplete="postal-code" value={form.pincode} onChange={set('pincode')}/></label>
    <label className="wide">{t('Note for the showroom (optional)')}<textarea maxLength={500} rows={2} value={form.note} onChange={set('note')}/></label></div></div>
   <aside className="cart-summary"><h2>{t('Order summary')}</h2>{ready.map(l=><div className="summary-row" key={l.id}><span>{t(l.product!.name)} × {l.qty}</span><span>{rupees(l.product!.price!*l.qty)}</span></div>)}
@@ -90,7 +90,7 @@ export function AccountPage(){
   <form className="form-card" onSubmit={submit}><div className="auth-tabs" role="tablist"><button type="button" role="tab" aria-selected={mode==='login'} className={mode==='login'?'selected':''} onClick={()=>{setMode('login');setError('')}}>{t('Log in')}</button><button type="button" role="tab" aria-selected={mode==='signup'} className={mode==='signup'?'selected':''} onClick={()=>{setMode('signup');setError('')}}>{t('Sign up')}</button></div>
    {mode==='signup'&&<><label>{t('Full name')}<input required maxLength={80} autoComplete="name" value={form.name} onChange={set('name')}/></label><label>{t('Phone number')}<input required type="tel" inputMode="tel" autoComplete="tel" pattern="\+?[0-9 -]{10,17}" value={form.phone} onChange={set('phone')}/></label></>}
    <label>{t('Email')}<input required type="email" autoComplete="email" value={form.email} onChange={set('email')}/></label>
-   {mode==='signup'&&form.email.trim().toLowerCase()==='kshitijdua22@gmail.com'&&<label>Owner setup code<input required autoComplete="off" value={form.ownerCode} onChange={set('ownerCode')}/><small>Use the private code provided for your store. It is required only when creating the owner account.</small></label>}
+   {mode==='signup'&&form.email.trim().toLowerCase()==='kshitijdua22@gmail.com'&&<label>{t('Owner setup code')}<input required autoComplete="off" value={form.ownerCode} onChange={set('ownerCode')}/><small>{t('Use the private code provided for your store. It is required only when creating the owner account.')}</small></label>}
    <label>{t('Password')}<input required type="password" minLength={mode==='signup'?8:1} autoComplete={mode==='login'?'current-password':'new-password'} value={form.password} onChange={set('password')}/>{mode==='signup'&&<small>{t('At least 8 characters.')}</small>}</label>
    {error&&<p className="form-error" role="alert">{error}</p>}
    <button className="btn" disabled={busy}>{busy?t('Please wait…'):mode==='login'?t('Log in'):t('Create account')}<ArrowUpRight size={17}/></button></form></section>;

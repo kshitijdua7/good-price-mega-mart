@@ -286,7 +286,7 @@ main{animation:pageIn .55s cubic-bezier(.2,.7,.2,1) backwards}
 /* Hindi and Punjabi: these scripts need looser spacing than the Latin display type */
 :is(.lang-hi,.lang-pa) *{letter-spacing:0!important}
 :is(.lang-hi,.lang-pa) :is(.logo,.footer-wordmark,.store-sign){letter-spacing:-.04em!important}
-:is(.lang-hi,.lang-pa) .logo small,:is(.lang-hi,.lang-pa) .store-sign small{letter-spacing:3px!important}
+:is(.lang-hi,.lang-pa) :is(.logo,.store-sign,.map-pin) small{letter-spacing:.5px!important;font-size:10px;font-weight:600}
 :is(.lang-hi,.lang-pa) :is(h1,h2,h3){line-height:1.34!important}
 :is(.lang-hi,.lang-pa) .eyebrow{font-size:12px}
 :is(.lang-hi,.lang-pa) .hero h1{font-size:clamp(40px,4.8vw,72px)}
