@@ -18,6 +18,14 @@ export const Ctx=createContext<Shop>(null as unknown as Shop);
 
 const hindiLabels=new Map(Object.entries(dict).map(([key,value])=>[key.toLowerCase(),value[0]]));
 export const hindiLabel=(value:string)=>hindiLabels.get(value.toLowerCase())??value;
+const punjabiLabels=new Map(Object.entries(dict).map(([key,value])=>[key.toLowerCase(),value[1]]));
+// The language of WhatsApp messages follows the language the visitor chose for the site.
+export type WaLang='en'|'hi'|'pa';
+let waLang:WaLang='en';
+export const setWaLang=(l:WaLang)=>{waLang=l};
+export const getWaLang=()=>waLang;
+export const waLabel=(value:string)=>waLang==='hi'?hindiLabel(value):waLang==='pa'?(punjabiLabels.get(value.toLowerCase())??value):value;
+export const waPick=(en:string,hi:string,pa:string)=>waLang==='hi'?hi:waLang==='pa'?pa:en;
 export const phone='919872850453';
 export const waText=(text:string)=>'https://wa.me/'+phone+'?text='+encodeURIComponent(text);
 export const rupees=(n:number)=>'₹'+Math.round(n).toLocaleString('en-IN');
